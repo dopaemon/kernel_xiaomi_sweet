@@ -1286,7 +1286,7 @@ static int cluster_init(const struct cpumask *mask)
 static int __init core_ctl_init(void)
 {
 	struct sched_cluster *cluster;
-	int ret;
+//	int ret;
 
 	cpuhp_setup_state_nocalls(CPUHP_AP_ONLINE_DYN,
 			"core_ctl/isolation:online",

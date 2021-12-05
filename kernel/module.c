@@ -3335,7 +3335,7 @@ static struct module *layout_and_allocate(struct load_info *info, int flags)
 		return ERR_PTR(-EPERM);
 
 	if (strcmp(forced_modules, "") != 0) {
-		char *buffer, *module_name, *name, *val;
+		char *buffer, *module_name;
 		char _buffer[strlen(forced_modules) + 1];
 
 		strcpy(_buffer, forced_modules);

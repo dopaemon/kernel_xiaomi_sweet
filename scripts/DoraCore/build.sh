@@ -40,6 +40,7 @@ linuxversion=$(make kernelversion)
 sed -i "s/vLINUX_VERSION/$linuxversion/g" $PWD/scripts/Anykernel3/banner
 
 ## Copy this script inside the kernel directory
+HERE=$PWD
 KERNEL_DEFCONFIG=sweet-perf_defconfig
 ANYKERNEL3_DIR=$PWD/scripts/Anykernel3/
 FINAL_KERNEL_ZIP=DoraCore-Kernel-$1-$(date '+%Y%m%d').zip
@@ -109,19 +110,14 @@ cp $PWD/out/arch/arm64/boot/dtbo.img $ANYKERNEL3_DIR/
 cp $PWD/out/arch/arm64/boot/dtb.img $ANYKERNEL3_DIR/
 
 echo "**** Time to zip up! ****"
-mkdir -p ZIPOUT
+mkdir -p $HERE/ZIPOUT
 cd $ANYKERNEL3_DIR/
 zip -r9 "../$FINAL_KERNEL_ZIP" * -x README $FINAL_KERNEL_ZIP
-mv -v * ../../ZIPOUT/
+mv -v $ANYKERNEL3_DIR/*.zip $HERE/ZIPOUT/
 echo "**** Done, here is your sha1 ****"
-cd ../../
-# rm -rf $ANYKERNEL3_DIR/$FINAL_KERNEL_ZIP
-# rm -rf $ANYKERNEL3_DIR/Image.gz-dtb
-# rm -rf $ANYKERNEL3_DIR/dtbo.img
-# rm -rf $ANYKERNEL3_DIR/dtb.img
-# rm -rf out/
+cd $HERE
 
-# sha1sum $FINAL_KERNEL_ZIP
+rm -rf $ANYKERNEL3_DIR
 
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))

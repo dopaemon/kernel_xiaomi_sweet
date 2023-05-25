@@ -42,7 +42,7 @@ sed -i "s/vLINUX_VERSION/$linuxversion/g" $PWD/scripts/Anykernel3/banner
 ## Copy this script inside the kernel directory
 HERE=$PWD
 KERNEL_DEFCONFIG=sweet-perf_defconfig
-ANYKERNEL3_DIR=$PWD/scripts/Anykernel3/
+ANYKERNEL3_DIR=$PWD/scripts/Anykernel3
 FINAL_KERNEL_ZIP=DoraCore-Kernel-$1-$(date '+%Y%m%d').zip
 export PATH="$HOME/cosmic/bin:$PATH"
 export ARCH=arm64

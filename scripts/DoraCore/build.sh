@@ -112,7 +112,7 @@ cp $PWD/out/arch/arm64/boot/dtb.img $ANYKERNEL3_DIR/
 echo "**** Time to zip up! ****"
 mkdir -p $HERE/ZIPOUT
 cd $ANYKERNEL3_DIR/
-zip -r9 "../$FINAL_KERNEL_ZIP" * -x README $FINAL_KERNEL_ZIP
+zip -r9 "$FINAL_KERNEL_ZIP" * -x README $FINAL_KERNEL_ZIP
 mv -v $ANYKERNEL3_DIR/*.zip $HERE/ZIPOUT/
 echo "**** Done, here is your sha1 ****"
 cd $HERE

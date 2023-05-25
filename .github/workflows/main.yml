@@ -40,12 +40,9 @@ jobs:
          bash scripts/DoraCore/build.sh "MIUI"
       shell: bash
 
-    - name: Upload files
-      uses: appleboy/sftp-action@master
-      with:
-        server: sftp://dopaemon@frs.sourceforge.net
-        username: ${{ secrets.SFTP_USERNAME }}
-        password: ${{ secrets.SFTP_PASSWORD }}
-        source: ZIPOUT/*.zip
-        target: /home/pfs/project/android-unofficial/Doraemon-Kernel/RedmiNote10Pro/
-
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3
+      with: # Artifact name
+        name: Redmi Note 10 Pro
+        # A file, directory or wildcard pattern that describes what to upload
+        path: ./ZIPOUT/*.zip

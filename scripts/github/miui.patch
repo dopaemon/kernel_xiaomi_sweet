@@ -1,0 +1,25 @@
+From 3b7da833ca83852ad3c60972a9ef6cdefcba8795 Mon Sep 17 00:00:00 2001
+From: RooGhz720 <rooghz720@gmail.com>
+Date: Sun, 16 Apr 2023 19:29:57 +0800
+Subject: [PATCH] xxxx
+
+Signed-off-by: RooGhz720 <rooghz720@gmail.com>
+---
+ .../boot/dts/qcom/dsi-panel-k6-38-0c-0a-fhd-dsc-video.dtsi    | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/qcom/dsi-panel-k6-38-0c-0a-fhd-dsc-video.dtsi b/arch/arm64/boot/dts/qcom/dsi-panel-k6-38-0c-0a-fhd-dsc-video.dtsi
+index 6420754..c25a486 100644
+--- a/arch/arm64/boot/dts/qcom/dsi-panel-k6-38-0c-0a-fhd-dsc-video.dtsi
++++ b/arch/arm64/boot/dts/qcom/dsi-panel-k6-38-0c-0a-fhd-dsc-video.dtsi
+@@ -41,8 +41,8 @@
+ 		qcom,mdss-dsi-mdp-trigger = "none";
+ 		qcom,mdss-dsi-bl-dcs-type-ss-ea;
+ 		qcom,mdss-dsi-reset-sequence = <0 1>, <1 10>;
+-		qcom,mdss-pan-physical-width-dimension = <69>;
+-		qcom,mdss-pan-physical-height-dimension = <154>;
++		qcom,mdss-pan-physical-width-dimension = <695>;
++		qcom,mdss-pan-physical-height-dimension = <1546>;
+ 		qcom,mdss-dsi-tx-eot-append;
+ 		qcom,dispparam-enabled;
+ 		qcom,mdss-dsi-panel-hdr-enabled;

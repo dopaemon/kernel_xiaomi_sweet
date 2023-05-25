@@ -1,0 +1,23 @@
+From 4dcced01f5164a88a331a6b7d94809d30874d4cb Mon Sep 17 00:00:00 2001
+From: RooGhz720 <rooghz720@gmail.com>
+Date: Thu, 23 Feb 2023 12:20:14 +0800
+Subject: [PATCH] no ln8000
+
+Signed-off-by: RooGhz720 <rooghz720@gmail.com>
+---
+ arch/arm64/configs/vendor/sweet_user_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/configs/vendor/sweet_user_defconfig b/arch/arm64/configs/vendor/sweet_user_defconfig
+index c2e5a70..2e1286b 100644
+--- a/arch/arm64/configs/vendor/sweet_user_defconfig
++++ b/arch/arm64/configs/vendor/sweet_user_defconfig
+@@ -2737,7 +2737,7 @@ CONFIG_ONEWIRE_GPIO=y
+ # TI Technologies, Inc. Charger support
+ #
+ CONFIG_BQ2597X_CHARGE_PUMP=y
+-CONFIG_CHARGER_LN8000=y
++# CONFIG_CHARGER_LN8000 is not set
+ CONFIG_K6_CHARGE=y
+ CONFIG_HWMON=y
+ # CONFIG_HWMON_VID is not set

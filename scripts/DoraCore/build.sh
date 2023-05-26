@@ -35,9 +35,37 @@ else
 fi
 
 ## Kernel Version
-linuxversion=$(make kernelversion)
 
-sed -i "s/vLINUX_VERSION/$linuxversion/g" $PWD/scripts/Anykernel3/banner
+file_path="$PWD/Makefile"
+
+# Lấy giá trị Linux
+while IFS=' =' read -r key value
+do
+  case $key in
+    "VERSION")
+      version=$value
+      ;;
+    "PATCHLEVEL")
+      patchlevel=$value
+      ;;
+    "SUBLEVEL")
+      sublevel=$value
+      ;;
+    "EXTRAVERSION")
+      extraversion=$value
+      ;;
+  esac
+done < "$file_path"
+
+# Tạo chuỗi Linux version
+linux_version="$version.$patchlevel.$sublevel$extraversion"
+
+# Lấy giá trị Name
+name=$(grep -Po '(?<=NAME = ).+' $file_path)
+
+# In ra giá trị Linux và Name
+sed -i "s/vLINUX_VERSION/$linux_version/g" $PWD/scripts/Anykernel3/banner
+sed -i "s/vLINUX_NAME/$name/g" $PWD/scripts/Anykernel3/banner
 
 ## Copy this script inside the kernel directory
 HERE=$PWD

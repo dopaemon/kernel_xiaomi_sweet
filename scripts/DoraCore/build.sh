@@ -3,11 +3,11 @@
 # set -e
 
 # Reset commit
-curl -s "https://api.github.com/repos/dopaemon/kernel_xiaomi_sweet" \
+curl -s "https://api.github.com/repos/arswb/dora_sweet" \
   -H "Accept: application/vnd.github.v3+json" \
   -o /tmp/repo_info.json
 default_branch=$(jq -r '.default_branch' /tmp/repo_info.json)
-curl -s "https://api.github.com/repos/dopaemon/kernel_xiaomi_sweet/commits/$default_branch" \
+curl -s "https://api.github.com/repos/arswb/dora_sweet/commits/$default_branch" \
   -H "Accept: application/vnd.github.v3+json" \
   -o /tmp/commit_info.json
 latest_commit_sha=$(jq -r '.sha' /tmp/commit_info.json)
@@ -16,19 +16,19 @@ echo "Latest commit SHA: $latest_commit_sha"
 git reset --hard $latest_commit_sha
 
 if [ "$1" = "OSS" ]; then
-    git config --local user.name "dopaemon"
-    git config --local user.email "polarisdp@gmail.com"
+    git config --local user.name "arswb"
+    git config --local user.email "6703134+arswb@users.noreply.github.com"
     git apply $PWD/scripts/github/ln8k.patch
 elif [ "$1" = "OSS-LN8000" ]; then
     echo "oss"
 elif [ "$1" = "MIUI" ]; then
-    git config --local user.name "dopaemon"
-    git config --local user.email "polarisdp@gmail.com"
+    git config --local user.name "arswb"
+    git config --local user.email "6703134+arswb@users.noreply.github.com"
     git apply $PWD/scripts/github/ln8k.patch
     git apply $PWD/scripts/github/miui.patch
 elif [ "$1" = "MIUI-LN8000" ]; then
-    git config --local user.name "dopaemon"
-    git config --local user.email "polarisdp@gmail.com"
+    git config --local user.name "arswb"
+    git config --local user.email "6703134+arswb@users.noreply.github.com"
     git apply $PWD/scripts/github/miui.patch
 else
     echo "OUT"
